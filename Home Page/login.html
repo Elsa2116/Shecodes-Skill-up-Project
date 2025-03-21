@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home - 2 / Home - 2 - login - E</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-box {
+        background-color: #e0b0ff; /* Light purple background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+
+      .login-box h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .login-box input[type="text"],
+      .login-box input[type="password"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .login-box .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .login-box .remember-forgot label {
+        font-size: 0.9em;
+      }
+
+      .login-box .remember-forgot a {
+        text-decoration: none;
+        color: #555;
+        font-size: 0.9em;
+      }
+
+      .login-box button {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .login-box .signup-link {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 0.9em;
+      }
+
+      .login-box .signup-link a {
+        color: #555;
+        text-decoration: none;
+      }
+
+      /* Specific styling for the email pre-filled example */
+      .login-box.email-prefilled input[type="text"] {
+        color: #555; /* Darker color for pre-filled text */
+      }
+
+      /* Layout for the two pages side-by-side */
+      .page-layout {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+      }
+
+      .page {
+        width: 45%; /* Adjust as needed */
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-layout">
+      <div class="page">
+        <h2>Home - 2</h2>
+        <div class="login-box">
+          <h2>Login</h2>
+          <input type="text" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <div class="remember-forgot">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#">Forget password ?</a>
+          </div>
+          <button>Login</button>
+          <div class="signup-link">
+            Don't have account ? <a href="#">Sign up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="page">
+        <h2>Home - 2 - login - E</h2>
+        <div class="login-box email-prefilled">
+          <h2>Login</h2>
+          <input type="text" value="yoditgirma1422@gmail.com" />
+          <input type="password" placeholder="Password" />
+          <div class="remember-forgot">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#">Forget password ?</a>
+          </div>
+          <button>Login</button>
+          <div class="signup-link">
+            Don't have account ? <a href="#">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skill Posting - C</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+
+      .header {
+        background-color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: purple;
+      }
+
+      .nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav li {
+        margin: 0 15px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 0.9em;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .courses-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .courses-header h2 {
+        margin: 0;
+        font-size: 1.8em;
+      }
+
+      .course-details {
+        display: flex;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .course-image {
+        width: 300px;
+        margin-right: 20px;
+      }
+
+      .course-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .course-info {
+        flex-grow: 1;
+      }
+
+      .course-info h3 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: purple;
+      }
+
+      .review-section {
+        margin-top: 20px;
+        border-left: 1px solid #ddd;
+        padding-left: 20px;
+      }
+
+      .review-section h4 {
+        color: purple;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+
+      .review-section .review-content {
+        background-color: #f8f8f8;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 0.9em;
+      }
+
+      .review-section .review-content p {
+        margin: 0;
+      }
+
+      .review-section .review-content .reviewer {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .course-actions {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .course-actions .enroll-button {
+        background-color: purple;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .course-actions .rating {
+        color: #888;
+        font-size: 0.9em;
+      }
+
+      .course-actions .rating span {
+        font-weight: bold;
+      }
+
+      .course-actions .students {
+        color: #888;
+        font-size: 0.9em;
+      }
+
+      .course-actions .students span {
+        font-weight: bold;
+      }
+
+      .footer {
+        background-color: #f8f8f8;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #ddd;
+      }
+
+      .footer-section {
+        width: 30%;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 10px;
+      }
+
+      .footer-section p {
+        font-size: 0.9em;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-section li {
+        margin-bottom: 5px;
+      }
+
+      .footer-section a {
+        text-decoration: none;
+        color: #333;
+        font-size: 0.9em;
+      }
+
+      .copyright {
+        text-align: center;
+        padding: 10px 0;
+        background-color: #eee;
+        font-size: 0.8em;
+      }
+
+      .course-tabs {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .course-tabs button {
+        background-color: transparent;
+        border: none;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .course-tabs button.active {
+        color: purple;
+        border-bottom: 2px solid purple;
+      }
+
+      .course-info ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .course-info li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .course-info li::before {
+        content: "✓";
+        color: purple;
+        margin-right: 10px;
+      }
+
+      .course-info .icon-list {
+        display: flex;
+        align-items: center;
+      }
+
+      .course-info .icon-list img {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">Skill Up</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Skill Posting</a></li>
+          <li><a href="#">Job Board</a></li>
+          <li><a href="#">Let's Talk</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

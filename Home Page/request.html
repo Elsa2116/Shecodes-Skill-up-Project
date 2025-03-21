@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Page - Learner L</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .profile-container {
+        width: 600px;
+        margin: 50px auto;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .profile-header {
+        text-align: center;
+        margin-bottom: 30px;
+        background-color: rgb(221, 7, 228);
+      }
+
+      .profile-image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      .edit-picture {
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+        font-size: 14px;
+        display: block;
+        margin: 5px auto;
+      }
+
+      .profile-name h1 {
+        margin: 10px 0;
+      }
+
+      .profile-details {
+        padding: 20px;
+      }
+
+      .detail-row {
+        margin-bottom: 20px;
+      }
+
+      .detail-row label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      textarea,
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        height: 80px;
+        resize: vertical;
+      }
+
+      .location-input {
+        position: relative;
+      }
+
+      .location-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+
+      .courses-dropdown select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px top 50%;
+        background-size: 20px;
+      }
+
+      .availability-switches {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        margin-bottom: 10px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196f3;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      .slider.round {
+        border-radius: 14px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+      .profile-actions {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .profile-actions button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .edit-profile,
+      .ok {
+        background-color: rgb(221, 7, 228);
+        color: #333;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-image">
+          <img src="" alt="Profile Picture" />
+          <button class="edit-picture">Edit picture</button>
+        </div>
+        <div class="profile-name"></div>
+      </div>
+
+      <div class="profile-details">
+        <div class="detail-row">
+          <label for="bio">Bio</label>
+          <textarea id="bio">[Your Bio]</textarea>
+        </div>
+
+        <div class="detail-row">
+          <label for="location">Location</label>
+          <div class="location-input">
+            <input type="text" id="location" value="[Your Location]" />
+            <span class="location-icon">📍</span>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <label for="courses">Courses</label>
+          <div class="courses-dropdown">
+            <select id="courses">
+              <option value="[Course 1]">[Course 1]</option>
+              <option value="[Course 2]">[Course 2]</option>
+              <option value="[Course 3]">[Course 3]</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <label>Availability</label>
+          <div class="availability-switches">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+              Available for teaching
+            </label>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+              Available for learning
+            </label>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <button class="edit-profile">Edit Profile</button>
+          <button class="ok">Ok</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Posting - R</title>
+    <!-- Link to the Font-Awesome Font -->
+    <!-- This font gives us the option to use emojies, symbols, common logos and icons as a font -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"
+    />
+
+    <!-- Link to Montserrat font on Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,600,600i,700,700i,800,800i,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7fafc;
+      }
+
+      header {
+        background-color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header .logo {
+        font-size: 24px;
+        font-weight: 600;
+        color: #800080;
+      }
+
+      header .logo img {
+        width: 150px;
+      }
+
+      header nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #4b5563;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      header nav a:hover {
+        color: #007bff;
+      }
+
+      .courses {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .courses h2 {
+        font-size: 36px;
+        font-weight: 600;
+        color: purple;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      .courses .profile-settings {
+        padding: 12px 20px;
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        margin-bottom: 40px;
+        font-size: 16px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+        outline: none;
+        margin-left: auto;
+        text-align: right;
+      }
+
+      .courses .profile-settings input[type="text"]:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+      }
+      .top-images-container {
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 50%; /* Makes it circular */
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        width: fit-content;
+        object-fit: cover;
+      }
+
+      .top-images-section {
+        display: flex;
+        gap: 20px;
+      }
+
+      .top-images-section .image-item {
+        text-align: center;
+        object-fit: cover;
+        border-radius: 50%; /* Makes it circular */
+      }
+
+      .top-images-section .image-item img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .top-images-section .image-item h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1e293b;
+        margin-top: 8px;
+      }
+
+      .courses .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+        text-align: left;
+      }
+
+      .courses .course-item {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .courses .course-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .courses .course-item img {
+        border-radius: 10px;
+        margin-bottom: 15px;
+        width: 50%;
+        height: 80px;
+        object-fit: cover;
+      }
+
+      .courses .course-item h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: rgb(211, 41, 211);
+        margin-bottom: 12px;
+      }
+
+      .courses .course-item p {
+        font-size: 16px;
+        color: rgb(234, 35, 221);
+        margin-bottom: 8px;
+      }
+
+      .courses .course-item .instructor {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .courses .course-item p {
+        font-size: 14px;
+        color: black;
+        margin-bottom: 4px;
+      }
+      .instructor {
+        color: #e230b0;
+      }
+      .courses .course-item button {
+        background-color: rgb(128, 0, 128);
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+
+      .courses .course-item button:hover {
+        background-color: #0056b3;
+      }
+
+      .courses .load-more {
+        display: block;
+        margin: 60px auto 0 auto;
+        padding: 12px 24px;
+        background-color: rgb(76, 30, 76);
+        color: #ffffff;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .courses .load-more:hover {
+        background-color: blue;
+      }
+      /* Footer Section */
+      footer {
+        background: rgb(93, 24, 93);
+        color: white;
+        padding: 20px 10%;
+        margin-top: 50px;
+        text-align: left;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .footer-section {
+        flex: 1;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-section ul li {
+        margin: 5px 0;
+      }
+
+      .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #007bff;
+      }
+
+      .skill-up p {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        header nav {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        header nav a {
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .courses h2 {
+          font-size: 30px;
+        }
+
+        .courses .profile-settings {
+          text-align: left;
+          margin-left: 0;
+        }
+
+        .top-images-section {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="C:\Users\zuriashwork\Desktop\skill up\image\logo.jpg"
+          alt="Skill Up Logo"
+        />
+      </div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="skill.html">Skill Posting</a>
+        <a href="#">Job Board</a>
+        <a href="#">Let's Talk</a>
+        <a href="#">Log Out</a>
+      </nav>
+    </header>
+    <main class="courses">
+      <h2>Courses</h2>
+      <div class="profile-settings">
+        <input type="text" placeholder="Search for skills or tutors..." />
+      </div>
+      <div class="top-images-container">
+        <div class="top-images-section">
+          <div class="image-item">
+            <img src="#" alt="Image 1" />
+            <h4>Coding</h4>
+          </div>
+          <div class="image-item">
+            <img
+              src="C:\Users\zuriashwork\Desktop\skill up\image\job.jpg"
+              alt="Image 2"
+            />
+            <h4>Crafting</h4>
+          </div>
+          <div class="image-item">
+            <img src="#" alt="Image 3" />
+            <h4>Cooking</h4>
+          </div>
+          <div class="image-item">
+            <img
+              src="C:\Users\zuriashwork\Desktop\skill up\image\skilll.jpg"
+              alt="Image 4"
+            />
+            <h4>Music</h4>
+          </div>
+        </div>
+      </div>
+      <div class="course-grid">
+        <div class="course-item">
+          <img
+            src="C:\Users\zuriashwork\Desktop\skill up\image\crafting.jpg"
+            alt="Crafting"
+          />
+          <h3>Crafting</h3>
+          <div class="instructor">
+            <p>Eden Abebe</p>
+            <p>Rate: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
+            <p>Learn crafting from professionals to improve your skill.</p>
+            <p>Free <button>Enroll now</button></p>
+          </div>
+        </div>
+        <div class="course-item">
+          <img
+            src="C:\Users\zuriashwork\Desktop\skill up\image\cooking.jpg"
+            alt="Cooking"
+          />
+          <h3>Cooking</h3>
+          <div class="instructor">
+            <p>Selam Gezahegn</p>
+            <p>Rate: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
+            <p>Learn crafting from professionals to improve your skill.</p>
+            <p>Free <button>Enroll now</button></p>
+          </div>
+        </div>
+        <div class="course-item">
+          <img
+            src="C:\Users\zuriashwork\Desktop\skill up\image\designing.jpg"
+            alt="designing"
+          />
+          <h3>designing</h3>
+          <div class="instructor">
+            <p>Fatuma Ahmed</p>
+            <p>Rate: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
+            <p>Learn crafting from professionals to improve your skill.</p>
+            <p>Pro <button>Enroll now</button></p>
+          </div>
+        </div>
+        <div class="course-item">
+          <img
+            src="C:\Users\zuriashwork\Desktop\skill up\image\coding.jpg"
+            alt="Coding"
+          />
+          <h3>Coding</h3>
+          <div class="instructor">
+            <p>Helen Fkadu</p>
+            <p>Rate: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
+            <p>Learn crafting from professionals to improve your skill.</p>
+            <p>Pro <button>Enroll now</button></p>
+          </div>
+        </div>
+        <div class="course-item">
+          <img
+            src="C:\Users\zuriashwork\Desktop\skill up\image\music.jpg"
+            alt="Music"
+          />
+          <h3>Music</h3>
+          <div class="instructor">
+            <p>Marta Kebede</p>
+            <p>Rate: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
+            <p>Learn crafting from professionals to improve your skill.</p>
+            <p>Free <button>Enroll now</button></p>
+          </div>
+        </div>
+        <div class="course-item">
+          <img
+            src="C:\Users\zuriashwork\Desktop\skill up\image\g. design.jpg"
+            alt="Graphics Design"
+          />
+          <h3>Graphics Design</h3>
+          <div class="instructor">
+            <p>Rahel Dereje</p>
+            <p>Rate: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
+            <p>Learn crafting from professionals to improve your skill.</p>
+
+            <p>Free <button>Enroll now</button></p>
+          </div>
+        </div>
+      </div>
+      <button class="load-more">Load More</button>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Skill Up</h3>
+          <p>
+            Skill Up is a platform designed to empower women by helping them
+            share their skills, learn new ones, and find job opportunities.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Search</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="skill.html">Skill Posting</a></li>
+            <li><a href="#">Job Board</a></li>
+            <li><a href="#">Let’s Talk</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p>Phone: +251-939-143-987</p>
+          <p>Email: yoditgirma1422@gmail.com</p>
+          <p>Location: Addis Ababa, Ethiopia</p>
+          <div class="social-icons">
+            <a href=""><span class="material-icons">linkedin</span></a>
+            <a href="#"><span class="material-icons">email</span></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2025 Skill Up. All Rights Reserved.</p>
+    </footer>
+    <script src="home.js"></script>
+  </body>
+</html>

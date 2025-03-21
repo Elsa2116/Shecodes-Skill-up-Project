@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: sans-serif; /* Or your preferred font */
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+header nav {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  margin-left: 15px;
+  color: #333;
+}
+.logo img {
+  width: 150px;
+}
+.skill-posting-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skill-posting-content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skill-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.skill-options button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.how-it-works {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.how-it-works div {
+  text-align: center;
+  width: 45%;
+}
+
+footer {
+  background-color: rgb(167, 62, 167);
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer div {
+  width: 30%;
+}
+
+footer a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+footer .contact-info {
+  text-align: right;
+}
+footer .social-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+footer .social-icons a {
+  margin-right: 20px;
+  font-size: 24px;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: white;
+}

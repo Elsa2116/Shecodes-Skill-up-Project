@@ -18,3 +18,7 @@ This project is built using the following technologies:
 - **CSS**: For styling the web pages and enhancing user experience.
 - **JavaScript**: For adding interactivity and dynamic content.
 
+  ## WE ARE ON THE WAY!
+
+           THANK YOU!
+
